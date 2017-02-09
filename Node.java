@@ -1,3 +1,4 @@
+import java.util.*;
 public class Node{
 
   private Node next;
@@ -7,13 +8,21 @@ public class Node{
     curr = value;
     next = null;
   }
+  public Node(){
+
+  }
 
   public void setNext (Node node){
     next = node;
   }
 
   public Node getNext (){
-    return next;
+    try{
+      return next;
+    }
+    catch(NullPointerException e){
+      return (Node) null;
+    }
   }
 
   public void setValue(int newCurr){
@@ -21,6 +30,11 @@ public class Node{
   }
 
   public int getValue(){
-    return curr; 
+    try{
+      return curr;
+    }
+    catch(NullPointerException e){
+      return (Integer) null;
+    }
   }
 }
